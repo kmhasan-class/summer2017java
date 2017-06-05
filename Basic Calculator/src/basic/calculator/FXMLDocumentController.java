@@ -19,25 +19,37 @@ import javafx.scene.control.TextField;
  * @author kmhasan
  */
 public class FXMLDocumentController implements Initializable {
-    
-    @FXML
-    private Label label;
-    @FXML
-    private Button button;
+
     @FXML
     private TextField displayField;
-    
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        String value = displayField.getText();
-        System.out.println(value);
-        label.setText(value);
-        button.setText(value);
-    }
-    
+    private Button digitZeroButton;
+    @FXML
+    private Button dotButton;
+    @FXML
+    private Button digitOneButton;
+    @FXML
+    private Button digitTwoButton;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
+    @FXML
+    private void handleDigitOneAction(ActionEvent event) {
+        String oldText = displayField.getText();
+        String newText = oldText + "1";
+
+        displayField.setText(newText);
+    }
+
+    @FXML
+    private void handleDigitTwoAction(ActionEvent event) {
+        String oldText = displayField.getText();
+        String newText = oldText + "2";
+
+        displayField.setText(newText);
+    }
+
 }
