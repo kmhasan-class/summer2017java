@@ -34,6 +34,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        displayField.requestFocus();
     }
 
     @FXML
@@ -42,6 +43,7 @@ public class FXMLDocumentController implements Initializable {
         String newText = oldText + "1";
 
         displayField.setText(newText);
+        displayField.requestFocus();
     }
 
     @FXML
@@ -50,6 +52,8 @@ public class FXMLDocumentController implements Initializable {
         String newText = oldText + "2";
 
         displayField.setText(newText);
+        displayField.requestFocus();
+        displayField.positionCaret(newText.length());
     }
 
 }
