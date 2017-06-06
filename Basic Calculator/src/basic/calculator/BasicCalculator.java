@@ -24,6 +24,7 @@ public class BasicCalculator extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setTitle("Basic Calculator");
         stage.show();
     }
 
