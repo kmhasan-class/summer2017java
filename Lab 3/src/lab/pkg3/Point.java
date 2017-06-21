@@ -10,15 +10,23 @@ package lab.pkg3;
  * @author kmhasan
  */
 public class Point {
-    double x;
-    double y;
+    private double x;
+    private double y;
     
-    Point(double px, double py) {
+    public Point(double px, double py) {
         x = px;
         y = py;
     }
     
-    void translate(double tx, double ty) {
+    public double getX() {
+        return x;
+    }
+    
+    public double getY() {
+        return y;
+    }
+    
+    public void translate(double tx, double ty) {
         x = x + tx;
         y = y + ty;
     }
@@ -27,13 +35,20 @@ public class Point {
     // https://www.tutorialspoint.com/computer_graphics/2d_transformation.htm
     // to implement rotate and scale
     
-    void rotate(double angle) {
+    public void rotate(double angle) {
         // angle is given in degrees
         // in Math class of Java all the angle related calculations
         // are in radians
+        double x0 = x;
+        double y0 = y;
+        double theta = Math.toRadians(angle);
+        
+        x = x0 * Math.cos(theta) - y0 * Math.sin(theta);
+        y = x0 * Math.sin(theta) + y0 * Math.cos(theta);
     }
     
-    void scale(double sx, double sy) {
-        
+    public void scale(double sx, double sy) {
+        x = x * sx;
+        y = y * sy;
     }
 }
