@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="384.0" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="assignment.materials.FXMLDocumentController">
+   <children>
+      <DatePicker fx:id="datePicker" layoutX="14.0" layoutY="14.0" onAction="#handleDatePickerAction" />
+      <Button layoutX="222.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSetDateAction" text="Set Date" />
+      <ComboBox fx:id="comboBox" layoutX="14.0" layoutY="48.0" onAction="#handleColorSelection" prefWidth="150.0" />
+      <ListView fx:id="listView" layoutX="13.0" layoutY="86.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="colorField" layoutX="14.0" layoutY="304.0" onAction="#handleAddColorAction" />
+      <Button layoutX="198.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleAddColorAction" text="Add Color" />
+      <Button layoutX="13.0" layoutY="338.0" mnemonicParsing="false" onAction="#handleOpenReportAction" text="Open Report" />
+   </children>
+</AnchorPane>
