@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 /**
@@ -39,6 +40,8 @@ public class FXMLDocumentController implements Initializable {
     private DatePicker dobPicker;
     @FXML
     private Label statusLabel;
+    @FXML
+    private ListView<?> listView;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
