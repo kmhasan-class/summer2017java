@@ -7,44 +7,55 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="database.gui.demo.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="410.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database.gui.demo.FXMLDocumentController">
    <children>
-      <HBox layoutX="10.0" layoutY="10.0">
+      <VBox layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
          <children>
-            <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0">
-               <HBox.margin>
-                  <Insets bottom="10.0" right="10.0" />
-               </HBox.margin>
-            </ListView>
-            <GridPane AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="103.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="197.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <HBox layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                <children>
-                  <Label text="Student Id" />
-                  <Label text="Student Name" GridPane.rowIndex="1" />
-                  <Label text="Date of Birth" GridPane.rowIndex="2" />
-                  <TextField fx:id="idField" GridPane.columnIndex="1" />
-                  <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <DatePicker fx:id="dobPicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <ToolBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
-                    <items>
-                      <Button mnemonicParsing="false" onAction="#handleResetAction" text="Reset" />
-                        <Button mnemonicParsing="false" onAction="#handleSubmitAction" text="Submit" />
-                    </items>
-                  </ToolBar>
-                  <Label fx:id="statusLabel" maxWidth="1.7976931348623157E308" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" />
+                  <ListView fx:id="listView" onMouseClicked="#handleStudentClickAction" prefHeight="186.0" prefWidth="143.0">
+                     <HBox.margin>
+                        <Insets bottom="10.0" right="10.0" />
+                     </HBox.margin>
+                  </ListView>
+                  <GridPane AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="118.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="127.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Student Id" />
+                        <Label text="Student Name" GridPane.rowIndex="1" />
+                        <Label text="Date of Birth" GridPane.rowIndex="2" />
+                        <TextField fx:id="idField" GridPane.columnIndex="1" />
+                        <TextField fx:id="nameField" prefHeight="25.0" prefWidth="143.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="dobPicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ToolBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3">
+                          <items>
+                            <Button mnemonicParsing="false" onAction="#handleResetAction" text="Reset" />
+                              <Button mnemonicParsing="false" onAction="#handleSubmitAction" text="Submit" />
+                          </items>
+                        </ToolBar>
+                        <Label fx:id="statusLabel" maxWidth="1.7976931348623157E308" GridPane.columnSpan="2147483647" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
                </children>
-            </GridPane>
+            </HBox>
+            <TableView fx:id="studentTable" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="104.0" text="Student Id" />
+                <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="165.0" text="Student Name" />
+                  <TableColumn fx:id="dobColumn" prefWidth="124.0" text="Date of Birth" />
+              </columns>
+            </TableView>
          </children>
-      </HBox>
+      </VBox>
    </children>
 </AnchorPane>

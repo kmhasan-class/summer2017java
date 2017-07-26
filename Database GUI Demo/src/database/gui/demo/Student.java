@@ -39,7 +39,8 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" + "id=" + id + ", name=" + name + ", dateOfBirth=" + dateOfBirth + '}';
+        return name;
+        //return "Student{" + "id=" + id + ", name=" + name + ", dateOfBirth=" + dateOfBirth + '}';
     }
     
     
