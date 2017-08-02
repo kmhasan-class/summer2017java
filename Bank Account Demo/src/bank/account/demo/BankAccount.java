@@ -54,11 +54,15 @@ public class BankAccount {
         if (amount > 0)
             balance = balance + amount;
     }
-    
+//    
+//    @Override
+//    public String toString() {
+//        return "BankAccount{" + "accountNumber=" + accountNumber + ", accountName=" + accountName + ", address=" + address + ", balance=" + balance + '}';
+//    }
+//    
+
     @Override
     public String toString() {
-        return "BankAccount{" + "accountNumber=" + accountNumber + ", accountName=" + accountName + ", address=" + address + ", balance=" + balance + '}';
+        return getAccountName() + " - " + getBalance();
     }
-    
-    
 }
