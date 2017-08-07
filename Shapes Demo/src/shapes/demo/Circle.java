@@ -9,7 +9,7 @@ package shapes.demo;
  *
  * @author kmhasan
  */
-public class Circle extends Shape {
+public class Circle extends Shape implements NameChanger {
     private double radius;
 
     public Circle(double radius) {
@@ -25,6 +25,21 @@ public class Circle extends Shape {
     @Override
     public double getPerimeter() {
         return 2 * Math.PI * radius;
+    }
+    
+    // not related to this project
+    // Method Overloading
+    int add(int a, int b) {
+        return a + b;
+    }
+    
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    @Override
+    public String changeName(String a) {
+        return a.toLowerCase();
     }
     
 }

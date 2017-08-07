@@ -9,7 +9,8 @@ package shapes.demo;
  *
  * @author kmhasan
  */
-public class Rectangle extends Shape {
+// Concrete class (means it is not abstract)
+public class Rectangle extends Shape implements NameChanger {
     private double length;
     private double width;
 
@@ -28,5 +29,11 @@ public class Rectangle extends Shape {
     public double getPerimeter() {
         return 2 * (length + width);
     }
+
+    @Override
+    public String changeName(String a) {
+        return a.toUpperCase();
+    }
+    
     
 }
