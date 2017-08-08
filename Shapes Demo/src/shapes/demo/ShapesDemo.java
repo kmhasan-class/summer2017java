@@ -64,9 +64,15 @@ public class ShapesDemo {
         */
         
         System.out.println("Before sorting: " + shapeList);
-        Collections.sort(shapeList);
+        //Collections.sort(shapeList);
         System.out.println("After sorting:  " + shapeList);
         
+        Polygon polygon = new Polygon();
+        polygon.addVertex(new Vertex(0, 0));
+        polygon.addVertex(new Vertex(1, 0));
+        polygon.addVertex(new Vertex(1, 1));
+        polygon.addVertex(new Vertex(0, 1));
+        System.out.println(polygon);
     }
     
     // Homework: read ahead about Polymorphism
