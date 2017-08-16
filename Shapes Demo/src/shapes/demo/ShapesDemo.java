@@ -97,6 +97,15 @@ public class ShapesDemo {
         // Compare by perimeter
         // Compare by name
         // Challenge: Compare by name first then by area
+        
+        Collections.sort(shapeList, 
+                (s1, s2) -> {
+                    if (s1.getPerimeter() < s2.getPerimeter())
+                        return -1;
+                    else if (s1.getPerimeter() > s2.getPerimeter())
+                        return +1;
+                    else return 0;
+                });
         System.out.println("After sorting:  " + shapeList);
 
         Polygon polygon = new Polygon();
