@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -16,6 +17,39 @@ import java.util.List;
  */
 public class StreamsDemo {
 
+    private List<Person> getListOfPeopleLessThan30YearsOld(List<Person> personList) {
+        /*
+        List<Person> newList = new ArrayList<>();
+        for (Person p : personList)
+            if (p.getAge() < 30)
+                newList.add(p);
+        return newList;
+        */
+        return personList
+                .stream()
+                .filter(person -> person.getAge() < 30)
+                .collect(Collectors.toList());
+    }
+    
+    private double getAgeSum(List<Person> personList) {
+        /*
+        double sum = 0;
+        for (Person p : personList)
+            sum = sum + p.getAge();
+        return sum;
+        */
+        
+        return personList
+                .stream()
+                .filter(person -> person.getAge() < 30)
+                .mapToDouble(person -> person.getAge())
+                .sum();
+    }
+    
+    // Homework:
+    // 1. Use streams API to find out the min/max age
+    // 2. Find out the longest name holding person
+    
     public StreamsDemo() {
         List<Person> personList = new ArrayList<>();
         personList.add(new Person(5, "John Doe", 14));
@@ -110,6 +144,11 @@ public class StreamsDemo {
                     )
                 .forEach(System.out::println);
         //personList.stream().forEach(System.out::println);
+        
+        System.out.println("\nList of people who are less than 30 years old");
+        getListOfPeopleLessThan30YearsOld(personList).forEach(System.out::println);
+        
+        System.out.println("\nSum of all the ages: " + getAgeSum(personList));
     }
 
     /**
